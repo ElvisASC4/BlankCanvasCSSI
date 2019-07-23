@@ -8,11 +8,10 @@ jinja_env = jinja2.Environment(
     autoescape=True)
 
 class WelcomePage(webapp2.RequestHandler):
-def get(self):
-        template = jinja_env.get_template('welcome.html')
-        template_vars = {
-
-        }
+    def get(self):
+        template = jinja_env.get_template('template/main.html')
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render())
 
 
 class NewPost(webapp2.RequestHandler):
@@ -39,7 +38,7 @@ app = webapp2.WSGIApplication([
     # This line routes the main url ('/')  - also know as
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
-    ('/View', View),
+    ('/View', ViewPage),
     ('/NewPost', NewPost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

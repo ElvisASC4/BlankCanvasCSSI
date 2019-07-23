@@ -16,19 +16,19 @@ class WelcomePage(webapp2.RequestHandler):
 
 class NewPost(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("makePost.html")
+        template = the_jinja_enviroment.get_template("template/makePost.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class ViewPage(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("view.html")
+        template = the_jinja_enviroment.get_template("template/view.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("aboutus.html")
+        template = the_jinja_enviroment.get_template("template/aboutus.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 

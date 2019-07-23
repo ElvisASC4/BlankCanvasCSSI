@@ -7,6 +7,11 @@ body{
 }
 #brandName{
   font-size: 60px;
+
+}
+
+#brandBackground{
+  background: rgba(0, 0, 0, 0.5)
 }
 #welcomeText{
   text-align: center;
@@ -21,12 +26,15 @@ body{
 }
 .homeButtons{
   padding: 30px 40px;
-  border: 1px solid black;
+  border: 6px solid black;
   margin: 30px;
-  background-image: url(../images/buttonBackgroundMain.jpg);
+  /* background-image: url(../images/buttonred.jpg); */
+  background-image: url(https://flipwallpapers.com/wallpapers/red-wallpaper-full-hd-On-Tumblr-Wallpaper.jpg);
+  border-radius: 50px;
   background-size: cover;
   color: white;
   font-size: 30px;
+  opacity: 0.96;
 }
 
 .topButtons{

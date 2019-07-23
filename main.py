@@ -9,7 +9,7 @@ jinja_env = jinja2.Environment(
 
 class WelcomePage(webapp2.RequestHandler):
 def get(self):
-        template = jinja_env.get_template('main.html')
+        template = jinja_env.get_template('welcome.html')
         template_vars = {
 
         }
@@ -17,19 +17,19 @@ def get(self):
 
 class NewPost(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template(" .html")
+        template = the_jinja_enviroment.get_template("pratice.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class ViewPage(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template(" .html")
+        template = the_jinja_enviroment.get_template("view.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template(" .html")
+        template = the_jinja_enviroment.get_template("aboutus.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
@@ -40,6 +40,6 @@ app = webapp2.WSGIApplication([
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
     ('/View', View),
-    ('/NewPost', NewPost),
+    ('/newpost', NewPost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

@@ -17,7 +17,7 @@ def get(self):
 
 class NewPost(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("pratice.html")
+        template = the_jinja_enviroment.get_template("makePost.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 

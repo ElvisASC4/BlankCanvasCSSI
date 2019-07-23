@@ -8,9 +8,11 @@ jinja_env = jinja2.Environment(
     autoescape=True)
 
 class WelcomePage(webapp2.RequestHandler):
-def get(self):
+    def get(self):
         template = jinja_env.get_template('main.html')
-        template_vars = {
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render())
+
 
 
 

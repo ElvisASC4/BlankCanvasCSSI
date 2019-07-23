@@ -22,6 +22,7 @@ class MakePost(webapp2.RequestHandler):
 
     def post(self):
         # Use the user input to create a new blog post
+        all_posts = Post.query().fetch()
         artist_input = self.request.get('artist')
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
@@ -29,6 +30,17 @@ class MakePost(webapp2.RequestHandler):
 
         new_post = Post(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
+        # Add the new post to the beginning of our already-queried list of
+         # posts
+        all_posts.insert(0, new_post)
+
+        # Render the template
+        template_vars = {
+
+             'all_posts': all_posts
+         }
+        template = the_jinja_env.get_template('templates/show_posts.html')
+        self.response.write(template.render(template_vars))
 
 
 class ViewPage(webapp2.RequestHandler):

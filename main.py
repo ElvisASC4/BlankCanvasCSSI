@@ -39,7 +39,7 @@ class MakePost(webapp2.RequestHandler):
 
              'all_posts': all_posts
          }
-        template = the_jinja_env.get_template('templates/show_posts.html')
+        template = the_jinja_env.get_template('templates/viewpage.html')
         self.response.write(template.render(template_vars))
 
 

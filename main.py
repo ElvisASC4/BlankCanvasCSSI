@@ -40,6 +40,6 @@ app = webapp2.WSGIApplication([
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
     ('/View', View),
-    ('/newpost', NewPost),
+    ('/NewPost', NewPost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

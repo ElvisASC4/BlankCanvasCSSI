@@ -14,7 +14,7 @@ class WelcomePage(webapp2.RequestHandler):
         self.response.write(template.render())
 
 
-class NewPost(webapp2.RequestHandler):
+class MakePost(webapp2.RequestHandler):
     def get(self):
         template = the_jinja_enviroment.get_template("template/makePost.html")
         self.response.headers['Content-Type'] = 'text/html'
@@ -39,6 +39,6 @@ app = webapp2.WSGIApplication([
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
     ('/View', ViewPage),
-    ('/NewPost', NewPost),
+    ('/MakePost', MakePost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

@@ -14,7 +14,14 @@ class WelcomePage(webapp2.RequestHandler):
         self.response.write(template.render())
 
 
+        }
 
+
+class NewPost(webapp2.RequestHandler):
+    def get(self):
+        template = the_jinja_enviroment.get_template(" .html")
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render())
 
 class ViewPage(webapp2.RequestHandler):
     def get(self):
@@ -22,10 +29,11 @@ class ViewPage(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
-class NewPost(webapp2.RequestHandler):
+class AboutUs(webapp2.RequestHandler):
     def get(self):
-
-
+        template = the_jinja_enviroment.get_template(" .html")
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render())
 
 
 
@@ -35,5 +43,5 @@ app = webapp2.WSGIApplication([
     ('/', WelcomePage),
     ('/View', View),
     ('/NewPost', NewPost),
-    ('/friends', FriendsPage) #maps '/predict' to the FortuneHandler
+    ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

@@ -1,0 +1,32 @@
+body{
+  background-image: url(../images/mainPage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+#welcomeText{
+  text-align: center;
+  margin-bottom: 200px;
+  margin-top: 150px;
+}
+#buttonsDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homeButtons{
+  padding: 30px 40px;
+  border: 1px solid black;
+  margin: 30px;
+  background-image: url(../images/buttonBackgroundMain.jpg);
+  background-size: cover;
+  color: white;
+}
+
+.topButtons{
+  display: inline;
+}
+
+#aboutButton{
+  display: block;
+}

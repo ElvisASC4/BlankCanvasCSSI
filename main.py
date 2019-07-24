@@ -14,21 +14,44 @@ class WelcomePage(webapp2.RequestHandler):
         self.response.write(template.render())
 
 
-class NewPost(webapp2.RequestHandler):
+class MakePost(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("template/makePost.html")
+        template = jinja_env.get_template("template/makePost.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
+    def post(self):
+        # Use the user input to create a new blog post
+        all_posts = Post.query().fetch()
+        artist_input = self.request.get('artist')
+        title_input = self.request.get('title')
+        poem_input = self.request.get('poem')
+
+
+        new_post = Post(artist= artist_input, title=title_input, poem=poem_input)
+        new_post.put()
+        # Add the new post to the beginning of our already-queried list of
+         # posts
+        all_posts.insert(0, new_post)
+
+        # Render the template
+        template_vars = {
+
+             'all_posts': all_posts
+         }
+        template = the_jinja_env.get_template('templates/viewpage.html')
+        self.response.write(template.render(template_vars))
+
+
 class ViewPage(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("template/view.html")
+        template = jinja_env.get_template("template/view.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):
-        template = the_jinja_enviroment.get_template("template/aboutus.html")
+        template = jinja_env.get_template("template/aboutus.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
@@ -39,6 +62,6 @@ app = webapp2.WSGIApplication([
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
     ('/View', ViewPage),
-    ('/NewPost', NewPost),
+    ('/MakePost', MakePost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

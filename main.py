@@ -22,13 +22,13 @@ class MakePost(webapp2.RequestHandler):
 
     def post(self):
         # Use the user input to create a new blog post
-        all_posts = Post.query().fetch()
+        all_posts = SavePost.query().fetch()
         artist_input = self.request.get('artist')
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
 
 
-        new_post = Post(artist= artist_input, title=title_input, poem=poem_input)
+        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
         # Add the new post to the beginning of our already-queried list of
          # posts

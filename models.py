@@ -1,6 +1,6 @@
 from google.appengine.ext import ndb
 
-class PostPost(ndb.Model):
+class SavePost(ndb.Model):
   artist = ndb.StringProperty()
   title = ndb.StringProperty()
   poem = ndb.StringProperty()

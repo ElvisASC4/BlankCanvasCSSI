@@ -9,27 +9,14 @@ jinja_env = jinja2.Environment(
 
 class WelcomePage(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
-        template = jinja_env.get_template('main.html')
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write(template.render())
-
-
-        }
-=======
         template = jinja_env.get_template('template/main.html')
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
->>>>>>> e4e875446d5e3d12ede14dea6e3b6d0dc9f00d55
 
 
 class MakePost(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
-        template = the_jinja_enviroment.get_template(" .html")
-=======
         template = jinja_env.get_template("template/makePost.html")
->>>>>>> e4e875446d5e3d12ede14dea6e3b6d0dc9f00d55
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
@@ -58,21 +45,13 @@ class MakePost(webapp2.RequestHandler):
 
 class ViewPage(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
-        template = the_jinja_enviroment.get_template(" .html")
-=======
         template = jinja_env.get_template("template/view.html")
->>>>>>> e4e875446d5e3d12ede14dea6e3b6d0dc9f00d55
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):
-<<<<<<< HEAD
-        template = the_jinja_enviroment.get_template(" .html")
-=======
         template = jinja_env.get_template("template/aboutus.html")
->>>>>>> e4e875446d5e3d12ede14dea6e3b6d0dc9f00d55
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 

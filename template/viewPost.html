@@ -6,10 +6,10 @@
   </head>
   <body>
 
-
+    {% for new_post in all_posts %}
     <p>The artist {{new_post.artist}}</p>
     <p>Made a post titled {{new_post.title}}</p>
     <p>{{new_post.poem}}</p>
-
+    {% endfor%}
   </body>
 </html>

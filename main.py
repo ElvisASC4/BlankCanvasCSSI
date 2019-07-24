@@ -43,12 +43,15 @@ class ViewPost(webapp2.RequestHandler):
         new_post.put()
 
          # posts
+        # posts_by_new=
         all_posts.insert(0, new_post)
+        # posts_ordered= posts_by_new.order(vote)
 
         # Render the template
         template_vars = {
                 "new_post":new_post,
                 "all_posts":all_posts
+                # "posts_ordered":posts_ordered
 
 
         }

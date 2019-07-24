@@ -37,10 +37,15 @@ body{
   font-size: 60px;
   margin-left: 200px;
 }
+
+.buttonLink{
+  text-decoration: none;
+}
 #buttonsDiv{
   display: flex;
   align-items: center;
   justify-content: center;
+  /* text-decoration: none; */
 }
 .homeButtons{
   padding: 30px 40px;

@@ -32,3 +32,13 @@ body{
 #titleBox{
   height: 30px;
 }
+#submitButton{
+  padding: 20px 30px;
+  border: 6px solid black;
+  background-image: url(https://flipwallpapers.com/wallpapers/red-wallpaper-full-hd-On-Tumblr-Wallpaper.jpg);
+  border-radius: 50px;
+  background-size: cover;
+  color: white;
+  font-size: 30px;
+  opacity: 0.96;
+}

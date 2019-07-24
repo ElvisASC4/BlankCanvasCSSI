@@ -1,0 +1,33 @@
+body{
+  background-image: url("../images/mainPage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#newBody{
+  background-color: coral;
+  padding: 100px;
+  margin: 60px;
+  border: 1px solid red;
+  border-radius: 15px;
+}
+#contens{
+  display: flex;
+  justify-content: center;
+}
+#introText{
+  font-size: 50px;
+  text-align: center;
+}
+.boxTexts{
+  font-size: 30px;
+}
+
+#contentBox{
+  height: 30px;
+}
+#nameBox{
+  height: 30px;
+}
+#titleBox{
+  height: 30px;
+}

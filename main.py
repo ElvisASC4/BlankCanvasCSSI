@@ -22,30 +22,36 @@ class MakePost(webapp2.RequestHandler):
 
     def post(self):
         # Use the user input to create a new blog post
-        all_posts = SavePost.query().fetch()
+        # all_posts = SavePost.query().fetch()
         artist_input = self.request.get('artist')
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
 
+        template_vars = {
+            "artist_input": artist_input,
+            "title_input": title_input,
+            "poem_input": poem_input
+        }
 
-        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
+        # new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
         # Add the new post to the beginning of our already-queried list of
          # posts
-        all_posts.insert(0, new_post)
+        # all_posts.insert(0, new_post)
 
         # Render the template
-        template_vars = {
-
-             'all_posts': all_posts
-         }
-        template = the_jinja_env.get_template('templates/viewpage.html')
+        # template_vars = {
+        #
+        #      'all_posts': all_posts
+        #
+        #  }
+        template = the_jinja_env.get_template('templates/viewPost.html')
         self.response.write(template.render(template_vars))
 
 
-class ViewPage(webapp2.RequestHandler):
+class ViewPost(webapp2.RequestHandler):
     def get(self):
-        template = jinja_env.get_template("template/view.html")
+        template = jinja_env.get_template("template/viewPost.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
@@ -61,7 +67,7 @@ app = webapp2.WSGIApplication([
     # This line routes the main url ('/')  - also know as
     # The root route - to the Fortune Handler
     ('/', WelcomePage),
-    ('/View', ViewPage),
+    ('/View', ViewPost),
     ('/MakePost', MakePost),
     ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
 ], debug=True)

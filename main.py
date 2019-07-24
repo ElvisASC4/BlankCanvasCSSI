@@ -37,8 +37,9 @@ class ViewPost(webapp2.RequestHandler):
         artist_input = self.request.get('artist')
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
+        vote_num = self.request.get('vote_count')
 
-        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
+        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
         new_post.put()
 
          # posts

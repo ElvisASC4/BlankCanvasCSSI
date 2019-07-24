@@ -6,7 +6,6 @@ class SavePost(ndb.Model):
   title = ndb.StringProperty()
   poem = ndb.StringProperty()
 
-  new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
-
+  
 
   # post = ndb.TextProperty()

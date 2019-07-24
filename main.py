@@ -27,15 +27,9 @@ class MakePost(webapp2.RequestHandler):
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
 
-        template_vars = {
-            "artist_input": artist_input,
-            "title_input": title_input,
-            "poem_input": poem_input
-        }
-
-        # new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
+        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
-        # Add the new post to the beginning of our already-queried list of
+
          # posts
         # all_posts.insert(0, new_post)
 

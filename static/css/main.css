@@ -13,11 +13,29 @@ body{
 #brandBackground{
   background: rgba(0, 0, 0, 0.5)
 }
-#welcomeText{
-  text-align: center;
+
+#textsOnPage{
+  display: flex;
   margin-bottom: 200px;
   margin-top: 150px;
+
+}
+#backOfBio{
+  background: rgba(0, 0, 0, 0.5);
+  margin-right: 150px;
+}
+.spacer{
+  flex-grow: 1;
+}
+#bio{
+  text-align: center;
+  font-size: 27px;
+  padding: 20px;
+}
+#welcomeText{
+  text-align: center;
   font-size: 60px;
+  margin-left: 200px;
 }
 #buttonsDiv{
   display: flex;

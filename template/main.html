@@ -3,21 +3,44 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../static/css/main.css">
-    <title> Blank Canvas</title>
+    <link rel="stylesheet" href="../static/css/animate.css-master/animate.css">
+    <title> Blank Canvas | Home Page</title>
   </head>
   <body>
     <div id="brandBackground">
       <h1 id="brandName"> Blank Canvas</h1>
     </div>
-      <h1 id="welcomeText"> Welcome </h1>
 
-      <div id="buttonsDiv">
-        <button class="homeButtons topButtons" id="makeButton" type="button" name="button" onclick="NewPost">Make A Post</button>
-
-        <button class="homeButtons topButtons" id="viewButton" type="button" name="button">View Posts</button>
-        <button class="homeButtons" id="aboutButton" type="button" name="button">About Creators</button>
+    <div id="textsOnPage">
+      <h1 id="welcomeText" class="wow bounceInLeft"> Welcome! </h1>
+      <span class="spacer"></span>
+      <div class="wow bounceInRight" data-wow-delay="1s" id="backOfBio">
+        <h2 id="bio">Blank Canvas provides an anonymous platform for artists <br> and independent thinkers to get honest feedback <br> from other artists.</h2>
       </div>
+    </div>
+
+    <div id="buttonsDiv">
+
+      <a href="makePost.html">
+        <button class="homeButtons topButtons wow bounceInUp" data-wow-delay="2s" id="makeButton" type="button" name="button" onclick="NewPost">Make A Post</button>
+      </a>
+
+      <a href="viewPost.html">
+        <button class="homeButtons topButtons wow bounceInUp" data-wow-delay="2.03s" id="viewButton" type="button" name="button">View Posts</button>
+      </a>
+
+      <a href="aboutus.html">
+        <button class="homeButtons wow bounceInUp" id="aboutButton" data-wow-delay="2s" type="button" name="button">About Creators</button>
+      </a>
+
+    </div>
 
 
   </body>
+
+  <script src="../static/js/WOW-master/dist/wow.js"></script>
+  <script>
+  new WOW().init();
+  </script>
+
 </html>

@@ -40,7 +40,7 @@ class ViewPost(webapp2.RequestHandler):
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
 
-        one_post = new_post = SavePost(artist= "banksy", title="art", poem="about art")
+        one_post = SavePost(artist= "banksy", title="art", poem="about art")
         one_post.put()
          # posts
         # all_posts.insert(0, new_post)

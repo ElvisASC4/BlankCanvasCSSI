@@ -5,10 +5,10 @@ threadsafe: yes
 handlers:
 
 #static directories should go ABOVE the catch all url (.*)
-- url: /static/images
-  static_dir: static/images
+- url: /static
+  static_dir: static
 - url: /.*
-  script: blog.app
+  script: main.app
 
 libraries:
 - name: webapp2

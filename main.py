@@ -1,6 +1,7 @@
 import jinja2
 import os
 import webapp2
+from models import SavePost
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -20,6 +21,15 @@ class MakePost(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
+
+
+
+
+class ViewPost(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_env.get_template("template/viewPost.html")
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write(template.render())
     def post(self):
         # Use the user input to create a new blog post
         # all_posts = SavePost.query().fetch()
@@ -30,24 +40,20 @@ class MakePost(webapp2.RequestHandler):
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
         new_post.put()
 
+        one_post = new_post = SavePost(artist= "banksy", title="art", poem="about art")
+        one_post.put()
          # posts
         # all_posts.insert(0, new_post)
 
         # Render the template
-        # template_vars = {
-        #
-        #      'all_posts': all_posts
-        #
-        #  }
-        template = the_jinja_env.get_template('templates/viewPost.html')
+        template_vars = {
+                "new_post":new_post
+
+
+        }
+        template = jinja_env.get_template(
+            'template/viewPost.html')
         self.response.write(template.render(template_vars))
-
-
-class ViewPost(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_env.get_template("template/viewPost.html")
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write(template.render())
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):

@@ -39,6 +39,7 @@ body{
   /* border: 1px solid red; */
   /* padding-bottom: 20px; */
   margin: 0px;
+  padding-top: 10PX;
   margin-bottom: 10px;
 }
 #commentDiv{
@@ -47,19 +48,25 @@ padding-left: 15px;
 padding-right: 15px;
 }
 #title{
-  border-bottom: 1px solid red;
-  padding-bottom: 10px;
-  width: 750px;
+  /* padding-bottom: 10px; */
+  /* width: 750px; */
 }
-
+#top{
+  /* padding-top: 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid red;
+  width: 100%;
+}
 #poem{
   /* border-bottom: 1px solid red; */
 }
 #voteCount{
-    border-top: 1px solid red;
-    width: 750px;
-    margin-top: 15px;
-    padding-top: 10px;
+    /* border-top: 1px solid red; */
+    /* width: 750px; */
+    /* margin-top: 15px; */
+    /* padding-top: 10px; */
 }
 #comment{
   width: 750px;

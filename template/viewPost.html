@@ -9,19 +9,27 @@
   </head>
   <body>
     {% for new_post in all_posts %}
+<<<<<<< HEAD
   <div id="parentContent">
 <div id="contents">
   <div id="actualText">
+=======
+
+>>>>>>> acfda2e96f2efc7725577cca34c65faab478e16b
     <p id="artistName">The artist {{new_post.artist}}</p>
     <p id="title">Made a post titled {{new_post.title}}</p>
     <p id="poem">{{new_post.poem}}</p>
   </div>
     <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
+<<<<<<< HEAD
     <p> This post's key is {{new_post.key}} </p>
     <p id ="comment">Comments below: </p>
     {% for comment in new_post.comments %}
     <p> {{comment}} </p>
     {% endfor %}
+=======
+
+>>>>>>> acfda2e96f2efc7725577cca34c65faab478e16b
     <form method="post" action="/View">
       <label>
           Your comment:
@@ -38,6 +46,13 @@
       <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
       <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key}}" size="80">
       <button class="vote">&#8681;</button>
+<<<<<<< HEAD
+=======
+
+      <p id="artistName">The artist {{new_post.artist}}</p>
+      <p id="title">Made a post titled {{new_post.title}}</p>
+      <p id="poem">{{new_post.poem}}</p>
+>>>>>>> acfda2e96f2efc7725577cca34c65faab478e16b
       </div>
     </div>
     {% endfor%}

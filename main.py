@@ -36,8 +36,6 @@ class MakePost(webapp2.RequestHandler):
 
 
 
-
-
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
         new_post.put()
         self.redirect('/View')
@@ -45,11 +43,12 @@ class MakePost(webapp2.RequestHandler):
         upvote_var = (self.request.get("upvote"))
 
         if upvote_var == "upvote_value":
+            vote_num = int(self.request.get('vote_count'))
+            post_key=self.request.get("hidden")
+            vote_num+=1
 
-            post=self.request.get("hidden")
-
-            post.vote_count+=1
-            post.put()
+            new_post.vote_count=vote_num
+            new_post.put()
 
          # posts
         # posts_by_new=

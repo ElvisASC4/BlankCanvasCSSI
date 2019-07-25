@@ -36,6 +36,8 @@ class MakePost(webapp2.RequestHandler):
 
 
 
+
+
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
         new_post.put()
         self.redirect('/View')

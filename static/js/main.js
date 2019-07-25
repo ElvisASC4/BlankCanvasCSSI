@@ -1,2 +1,2 @@
-
-upvote.addEventListener('click', upvote(), True);
+//
+// upvote.addEventListener('click', upvote(), True);

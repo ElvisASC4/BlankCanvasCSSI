@@ -40,15 +40,7 @@ class MakePost(webapp2.RequestHandler):
         new_post.put()
         self.redirect('/View')
 
-        upvote_var = (self.request.get("upvote"))
 
-        if upvote_var == "upvote_value":
-            vote_num = int(self.request.get('vote_count'))
-            post_key=self.request.get("hidden")
-            vote_num+=1
-
-            new_post.vote_count=vote_num
-            new_post.put()
 
          # posts
         # posts_by_new=
@@ -89,23 +81,37 @@ class ViewPost(webapp2.RequestHandler):
         template = jinja_env.get_template(
             'template/viewPost.html')
         self.response.write(template.render(template_vars))
-# class UpVote(webapp2.RequestHandler):
-#     def post(self):
-#         vote_num = self.request.get('vote_count')
-#         vote_num+=1
-#
-#         new_post.vote_count=vote_num
-#         new_post.put()
-#
-#         template_vars = {
-#                 "new_post":new_post,
-#                 # "posts_ordered":posts_ordered
-#
-#         }
-#         template = jinja_env.get_template(
-#             'template/viewPost.html')
-#         self.response.write(template.render(template_vars))
 
+
+
+class UpVote(webapp2.RequestHandler):
+    def post(self):
+        post_key=self.request.get("hidden")
+        post = ndb.Key(urlsafe = post_key).get()
+        post.vote_count+=1
+
+        post.put()
+        template_vars = {
+                "new_post":post,
+
+                # "posts_ordered":posts_ordered
+                }
+        \self.redirect('/View')
+        # }
+        # template = jinja_env.get_template(
+        #     'template/viewPost.html')
+        # self.response.write(template.render(template_vars))
+
+#
+# upvote_var = (self.request.get("upvote"))
+#
+# if upvote_var == "upvote_value":
+#     vote_num = int(self.request.get('vote_count'))
+#     post_key=self.request.get("hidden")
+#     vote_num+=1
+#
+#     new_post.vote_count=vote_num
+#     new_post.put()
 
 
 class AboutUs(webapp2.RequestHandler):
@@ -123,5 +129,5 @@ app = webapp2.WSGIApplication([
     ('/View', ViewPost),
     ('/MakePost', MakePost),
     ('/AboutUs', AboutUs),
-
+    ('/UpVote', UpVote)
     ], debug=True)

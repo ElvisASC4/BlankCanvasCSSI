@@ -4,6 +4,8 @@ body{
   color: white;
 }
 
+
+
 #contents{
   display: flex;
   justify-content: center;
@@ -22,21 +24,56 @@ body{
   padding: 20px;
 
 }
+
+.button{
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+  font-size: 13px;
+}
 #parentContent{
   display: flex;
   justify-content: center;
 }
 #artistName{
   /* border: 1px solid red; */
+  /* padding-bottom: 20px; */
+  margin: 0px;
+  padding-top: 10PX;
+  margin-bottom: 10px;
 }
-
+#commentDiv{
+border: 1px solid red;
+padding-left: 15px;
+padding-right: 15px;
+}
 #title{
-  border-bottom: 1px solid red;
-  width: 700px;
+  /* padding-bottom: 10px; */
+  /* width: 750px; */
 }
-
+#top{
+  /* padding-top: 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid red;
+  width: 100%;
+}
 #poem{
-  /* border: 1px solid red; */
+  /* border-bottom: 1px solid red; */
+}
+#voteCount{
+    /* border-top: 1px solid red; */
+    /* width: 750px; */
+    /* margin-top: 15px; */
+    /* padding-top: 10px; */
+}
+#comment{
+  width: 750px;
+  border-bottom: 1px dashed red;
+  margin-top: 0;
+  text-align: center;
+  /* padding-top: -28px; */
 }
 #actualText{
   border: 1px solid black;

@@ -17,11 +17,12 @@
       <p id="poem">{{new_post.poem}}</p>
     </div>
       <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
-      <p id ="comment">Feedback: </p>
-      {% for comment in new_post.comments %}
-      <p> {{comment}} </p>
-      {% endfor %}
-
+      <div id="commentDiv">
+        <p id ="comment">Feedback: </p>
+        {% for comment in new_post.comments %}
+        <p> {{comment}} </p>
+        {% endfor %}
+      </div>
 
       <form method="post" action="/View">
         <label>

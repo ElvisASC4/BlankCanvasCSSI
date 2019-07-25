@@ -4,6 +4,8 @@ body{
   color: white;
 }
 
+
+
 #contents{
   display: flex;
   justify-content: center;
@@ -32,7 +34,11 @@ body{
   margin: 0px;
   margin-bottom: 10px;
 }
+/* #commentDiv{
+  display: flex;
+  justify-content: center;
 
+} */
 #title{
   border-bottom: 1px solid red;
   padding-bottom: 10px;
@@ -47,6 +53,9 @@ body{
     width: 750px;
     margin-top: 15px;
     padding-top: 10px;
+}
+#comment{
+  width: 750px;
 }
 #actualText{
   border: 1px solid black;

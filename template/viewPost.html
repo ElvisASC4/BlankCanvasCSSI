@@ -9,12 +9,12 @@
   </head>
   <body>
     {% for new_post in all_posts %}
-<<<<<<< HEAD
+
     <p id="artistName">The artist {{new_post.artist}}</p>
     <p id="title">Made a post titled {{new_post.title}}</p>
     <p id="poem">{{new_post.poem}}</p>
     <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
-    <p> This post's key is {{new_post.key}} </p>
+
     <form method="post" action="/View">
       <label>
           Your comment:
@@ -31,7 +31,7 @@
       <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
       <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key}}" size="80">
       <button class="vote">&#8681;</button>
-=======
+
       <p id="artistName">The artist {{new_post.artist}}</p>
       <p id="title">Made a post titled {{new_post.title}}</p>
       <p id="poem">{{new_post.poem}}</p>

@@ -24,6 +24,13 @@ body{
   padding: 20px;
 
 }
+
+.button{
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+  font-size: 13px;
+}
 #parentContent{
   display: flex;
   justify-content: center;
@@ -34,11 +41,11 @@ body{
   margin: 0px;
   margin-bottom: 10px;
 }
-/* #commentDiv{
-  display: flex;
-  justify-content: center;
-
-} */
+#commentDiv{
+border: 1px solid red;
+padding-left: 15px;
+padding-right: 15px;
+}
 #title{
   border-bottom: 1px solid red;
   padding-bottom: 10px;
@@ -56,6 +63,10 @@ body{
 }
 #comment{
   width: 750px;
+  border-bottom: 1px dashed red;
+  margin-top: 0;
+  text-align: center;
+  /* padding-top: -28px; */
 }
 #actualText{
   border: 1px solid black;

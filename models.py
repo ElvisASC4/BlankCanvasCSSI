@@ -8,7 +8,7 @@ class SavePost(ndb.Model):
 
 
   vote_count = ndb.IntegerProperty()
-  comment = ndb.TextProperty()
+  comments = ndb.TextProperty(repeated=True)
   code = ndb.StringProperty()
 
 

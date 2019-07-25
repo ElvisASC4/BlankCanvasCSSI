@@ -9,6 +9,7 @@
   <body>
 <div id="contents">
     {% for new_post in all_posts %}
+<<<<<<< HEAD
     <p id="artistName">The artist {{new_post.artist}}</p>
     <p id="title">Made a post titled {{new_post.title}}</p>
     <p id="poem">{{new_post.poem}}</p>
@@ -30,9 +31,35 @@
       <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
       <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key}}" size="80">
       <button class="vote">&#8681;</button>
+=======
+      <p id="artistName">The artist {{new_post.artist}}</p>
+      <p id="title">Made a post titled {{new_post.title}}</p>
+      <p id="poem">{{new_post.poem}}</p>
+      <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
+      <p id ="comment">Comments below: </p>
+      {% for comment in new_post.comments %}
+      <p> {{comment}} </p>
+      {% endfor %}
+
+
+      <form method="post" action="/View">
+        <label>
+            Your comment:
+            <input type="hidden" name="postKey" value="{{ new_post.key.urlsafe()  }}" />
+            <textarea name="comment" rows="8" cols="80"></textarea>
+        </label>
+        <br>
+        <!-- The comment button : -->
+
+        <button id="commentButton" type="submit"> Post your comment </button>
+        <!-- The deletion button : -->
+        <button id="deleteButton" type="submit"> Delete Post </button>
+        <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
+        <input id="nameBox" type="text" name="hidden" value="{{new_post.key.id()}}" size="80">
+        <button class="vote">&#8681;</button>
+>>>>>>> 0c3280cfe3d11bfc4bbbd43b8ef1aeb7fdfd2d3f
 
     </form>
-
     {% endfor%}
 
 <script src="../static/js/main.js"></script>

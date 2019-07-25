@@ -1,0 +1,63 @@
+body{
+  background-image: url("https://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/field/image/Hero%20Image_Haring_FINAL.jpg");
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  color: black;
+}
+.spiderMan{
+  width: 80px;
+  height: 80px;
+}
+
+#newBody{
+  background-image: url("../images/page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px;
+  margin: 60px;
+  border: 2px solid black;
+  border-radius: 20px;
+  /* opacity: 0.9; */
+}
+#contens{
+  display: flex;
+  justify-content: center;
+}
+#introText{
+  font-size: 50px;
+  text-align: center;
+  color: red;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  /* text-shadow: 2px 2px black; */
+
+}
+#dancingImages{
+  display: flex;
+  justify-content: center;
+}
+.boxTexts{
+  font-size: 30px;
+}
+
+#contentBox{
+  height: 30px;
+}
+#nameBox{
+  height: 30px;
+}
+#titleBox{
+  height: 30px;
+}
+#submitButton{
+  padding: 20px 173px;
+  border: 3px solid black;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  /* background-image: url(https://flipwallpapers.com/wallpapers/red-wallpaper-full-hd-On-Tumblr-Wallpaper.jpg); */
+  /* background-size: cover; */
+  /* color: white; */
+  font-size: 20px;
+  opacity: 0.96;
+}

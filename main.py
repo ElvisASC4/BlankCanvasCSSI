@@ -1,6 +1,7 @@
 import jinja2
 import os
 import webapp2
+from models import SavePost
 
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
@@ -20,33 +21,8 @@ class MakePost(webapp2.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
 
-    def post(self):
-        # Use the user input to create a new blog post
-        # all_posts = SavePost.query().fetch()
-        artist_input = self.request.get('artist')
-        title_input = self.request.get('title')
-        poem_input = self.request.get('poem')
 
-        template_vars = {
-            "artist_input": artist_input,
-            "title_input": title_input,
-            "poem_input": poem_input
-        }
 
-        # new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input)
-        new_post.put()
-        # Add the new post to the beginning of our already-queried list of
-         # posts
-        # all_posts.insert(0, new_post)
-
-        # Render the template
-        # template_vars = {
-        #
-        #      'all_posts': all_posts
-        #
-        #  }
-        template = the_jinja_env.get_template('templates/viewPost.html')
-        self.response.write(template.render(template_vars))
 
 
 class ViewPost(webapp2.RequestHandler):
@@ -54,6 +30,34 @@ class ViewPost(webapp2.RequestHandler):
         template = jinja_env.get_template("template/viewPost.html")
         self.response.headers['Content-Type'] = 'text/html'
         self.response.write(template.render())
+    def post(self):
+        # Use the user input to create a new blog post
+        all_posts = SavePost.query().fetch()
+
+        artist_input = self.request.get('artist')
+        title_input = self.request.get('title')
+        poem_input = self.request.get('poem')
+        vote_num = self.request.get('vote_count')
+
+        new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
+        new_post.put()
+
+         # posts
+        # posts_by_new=
+        all_posts.insert(0, new_post)
+        # posts_ordered= posts_by_new.order(vote)
+
+        # Render the template
+        template_vars = {
+                "new_post":new_post,
+                "all_posts":all_posts
+                # "posts_ordered":posts_ordered
+
+
+        }
+        template = jinja_env.get_template(
+            'template/viewPost.html')
+        self.response.write(template.render(template_vars))
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):

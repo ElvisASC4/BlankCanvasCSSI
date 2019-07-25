@@ -17,7 +17,7 @@
       <p id="poem">{{new_post.poem}}</p>
     </div>
       <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
-      <p id ="comment">Comments below: </p>
+      <p id ="comment">Feedback: </p>
       {% for comment in new_post.comments %}
       <p> {{comment}} </p>
       {% endfor %}
@@ -25,9 +25,9 @@
 
       <form method="post" action="/View">
         <label>
-            Your comment:
+            <h3>Give some feedback!:</h3>
             <input type="hidden" name="postKey" value="{{ new_post.key.urlsafe()  }}" />
-            <textarea name="comment" rows="8" cols="80"></textarea>
+            <textarea name="comment" rows="2" cols="125"></textarea>
         </label>
         <br>
         <!-- The comment button : -->

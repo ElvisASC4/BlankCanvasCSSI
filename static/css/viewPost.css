@@ -32,11 +32,17 @@ body{
 
 #title{
   border-bottom: 1px solid red;
-  width: 700px;
+  width: 750px;
 }
 
 #poem{
-  /* border: 1px solid red; */
+  /* border-bottom: 1px solid red; */
+}
+#voteCount{
+    border-top: 1px solid red;
+    width: 750px;
+    margin-top: 20px;
+    padding-top: 20px;
 }
 #actualText{
   border: 1px solid black;

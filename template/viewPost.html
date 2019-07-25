@@ -31,11 +31,15 @@
         <button id="commentButton" type="submit"> Post your comment </button>
         <!-- The deletion button : -->
         <button id="deleteButton" type="submit"> Delete Post </button>
+        <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
+        <input id="nameBox" type="text" name="hidden" value="{{new_post.key.id()}}" size="80">
+        <button class="vote">&#8681;</button>
 
+    </form>
+    {% endfor%}
 
-      </form>
-
-    {% endfor %}
+<script src="../static/js/main.js"></script>
 </div>
   </body>
+
 </html>

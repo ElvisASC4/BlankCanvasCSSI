@@ -32,10 +32,28 @@ class MakePost(webapp2.RequestHandler):
         vote_num = self.request.get('vote_count')
 
 
+
+
+
+
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
         new_post.put()
-
         self.redirect('/View')
+
+        upvote_var = (self.request.get("upvote"))
+
+        if upvote_var == "upvote_value":
+            vote_num = int(self.request.get('vote_count'))
+            post_key=self.request.get("hidden")
+            vote_num+=1
+
+            new_post.vote_count=vote_num
+            new_post.put()
+
+         # posts
+        # posts_by_new=
+        all_posts.insert(0, new_post)
+        # posts_ordered= posts_by_new.order(vote)
 
 class ViewPost(webapp2.RequestHandler):
     def get(self):
@@ -59,7 +77,7 @@ class ViewPost(webapp2.RequestHandler):
         # print "hi there"
 
         print post
-        post.comments.append(comment_input) 
+        post.comments.append(comment_input)
         post.put()
 
         # Render the template
@@ -71,6 +89,23 @@ class ViewPost(webapp2.RequestHandler):
         template = jinja_env.get_template(
             'template/viewPost.html')
         self.response.write(template.render(template_vars))
+# class UpVote(webapp2.RequestHandler):
+#     def post(self):
+#         vote_num = self.request.get('vote_count')
+#         vote_num+=1
+#
+#         new_post.vote_count=vote_num
+#         new_post.put()
+#
+#         template_vars = {
+#                 "new_post":new_post,
+#                 # "posts_ordered":posts_ordered
+#
+#         }
+#         template = jinja_env.get_template(
+#             'template/viewPost.html')
+#         self.response.write(template.render(template_vars))
+
 
 
 class AboutUs(webapp2.RequestHandler):
@@ -87,5 +122,6 @@ app = webapp2.WSGIApplication([
     ('/', WelcomePage),
     ('/View', ViewPost),
     ('/MakePost', MakePost),
-    ('/AboutUs', AboutUs) #maps '/predict' to the FortuneHandler
-], debug=True)
+    ('/AboutUs', AboutUs),
+
+    ], debug=True)

@@ -5,13 +5,18 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <link rel="stylesheet" href="../static/css/viewPost.css">
   </head>
   <body>
-<div id="contents">
     {% for new_post in all_posts %}
+  <div id="parentContent">
+<div id="contents">
+  <div id="actualText">
     <p id="artistName">The artist {{new_post.artist}}</p>
     <p id="title">Made a post titled {{new_post.title}}</p>
     <p id="poem">{{new_post.poem}}</p>
+  </div>
     <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
 
     <form method="post" action="/View">
@@ -28,7 +33,8 @@
 
 
     </form>
-
+</div>
+</div>
     {% endfor%}
 </div>
   </body>

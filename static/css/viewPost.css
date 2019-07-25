@@ -1,4 +1,44 @@
+body{
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfVRDAvEvWTja1VU75wfE2rKO0LCwTLZp_-J_QyLdIxczCXL_U");
+  /* background-repeat: no-repeat; */
+  color: white;
+}
+
 #contents{
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #ebe7df;
+  border-radius: 35px;
+  width: 800px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  /* background-image: url("https://media.istockphoto.com/photos/dark-texture-background-of-black-fabric-picture-id185005145?k=6&m=185005145&s=612x612&w=0&h=8xOoEtJcuHQv1F60A3BuibF8q7wqIeuFB4VINRmAqAI=");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  background-color: black;
+  color: white;
+  padding: 20px;
+
+}
+#parentContent{
+  display: flex;
+  justify-content: center;
+}
+#artistName{
+  border: 1px solid red;
+}
+
+#title{
+  border: 1px solid red;
+}
+
+#poem{
+  border: 1px solid red;
+}
+#actualText{
+  border: 1px solid black;
+  color: white;
+  /* background-color: black; */
 }

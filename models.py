@@ -6,6 +6,11 @@ class SavePost(ndb.Model):
   title = ndb.StringProperty()
   poem = ndb.TextProperty()
   vote_count = ndb.IntegerProperty()
+<<<<<<< HEAD
+  code = ndb.StringProperty()
+=======
+  comment = ndb.TextProperty()
+>>>>>>> f4701114038fce3fb07cc0205f0127f4da3efab6
 
 
 

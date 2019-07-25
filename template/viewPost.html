@@ -5,7 +5,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../static/css/viewPost.css">
   </head>
   <body>
 <div id="contents">
@@ -18,11 +17,15 @@
     <form method="post" action="/View">
       <label>
           Your comment:
-          <textarea name="comment" rows="8" cols="80"></textarea>
+          <textarea name="poem" rows="8" cols="80"></textarea>
       </label>
       <br>
+      <!-- The comment button : -->
 
       <button id="commentButton" type="submit"> Post your comment </button>
+      <!-- The deletion button : -->
+      <button id="deleteButton" type="submit"> Delete Post </button>
+
 
     </form>
 

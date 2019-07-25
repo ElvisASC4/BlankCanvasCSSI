@@ -5,7 +5,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-
     <link rel="stylesheet" href="../static/css/viewPost.css">
   </head>
   <body>
@@ -18,7 +17,11 @@
     <p id="poem">{{new_post.poem}}</p>
   </div>
     <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
-
+    <p> This post's key is {{new_post.key}} </p>
+    <p id ="comment">Comments below: </p>
+    {% for comment in new_post.comments %}
+    <p> {{comment}} </p>
+    {% endfor %}
     <form method="post" action="/View">
       <label>
           Your comment:
@@ -27,15 +30,19 @@
       <br>
       <!-- The comment button : -->
 
-      <button id="commentButton" type="submit"> Post your comment </button>
+      <button id="commentButton" name="comment" type="submit"> Post your comment </button>
+
       <!-- The deletion button : -->
-      <button id="deleteButton" type="submit"> Delete Post </button>
+      <button id="deleteButton" name="delete" type="submit"> Delete Post </button>
 
-
-    </form>
-</div>
-</div>
+      <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
+      <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key}}" size="80">
+      <button class="vote">&#8681;</button>
+      </div>
+    </div>
     {% endfor%}
-</div>
+
+<!-- <script src="../static/js/main.js"></script> -->
   </body>
+
 </html>

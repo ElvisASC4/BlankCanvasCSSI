@@ -7,19 +7,25 @@
     <title></title>
   </head>
   <body>
-<div class="contents">
+<div id="contents">
     {% for new_post in all_posts %}
-    <p>The artist {{new_post.artist}}</p>
-    <p>Made a post titled {{new_post.title}}</p>
-    <p>{{new_post.poem}}</p>
-    <p>Your vote count is {{new_post.vote_count}}</p>
-    <br>
-    <br>
-    {% endfor%}
-<<<<<<< HEAD
-</div>
-=======
+    <p id="artistName">The artist {{new_post.artist}}</p>
+    <p id="title">Made a post titled {{new_post.title}}</p>
+    <p id="poem">{{new_post.poem}}</p>
+    <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
 
->>>>>>> 2e2869bb382933ef8db04ab55f55b2ef8c6e8bbc
+    <form method="post" action="/View">
+      <label>
+          Your comment:
+          <textarea name="poem" rows="8" cols="80"></textarea>
+      </label>
+      <br>
+
+      <button id="commentButton" type="submit"> Post your comment </button>
+
+    </form>
+
+    {% endfor%}
+</div>
   </body>
 </html>

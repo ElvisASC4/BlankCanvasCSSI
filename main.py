@@ -96,7 +96,7 @@ class UpVote(webapp2.RequestHandler):
 
                 # "posts_ordered":posts_ordered
                 }
-        \self.redirect('/View')
+        self.redirect('/View')
         # }
         # template = jinja_env.get_template(
         #     'template/viewPost.html')

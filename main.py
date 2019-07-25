@@ -51,8 +51,8 @@ class ViewPost(webapp2.RequestHandler):
 
         if upvote_var == "upvote_value":
 
-            post_key=self.request.get("hidden")
-            post = SavePost.get_by_id(post_key)
+            post=self.request.get("hidden")
+
             post.vote_count+=1
             post.put()
 

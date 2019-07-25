@@ -5,13 +5,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../static/css/viewPost.css">
   </head>
   <body>
-<div id="contents">
     {% for new_post in all_posts %}
+    <div id="parentContent">
+    <div id="contents">
+      <div id="actualText">
       <p id="artistName">The artist {{new_post.artist}}</p>
       <p id="title">Made a post titled {{new_post.title}}</p>
       <p id="poem">{{new_post.poem}}</p>
+      </div>
       <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
       <p id ="comment">Comments below: </p>
       {% for comment in new_post.comments %}
@@ -34,12 +38,12 @@
         <button class="vote" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
         <input id="nameBox" type="text" name="hidden" value="{{new_post.key.id()}}" size="80">
         <button class="vote">&#8681;</button>
-
     </form>
+  </div>
+</div>
     {% endfor%}
 
 <script src="../static/js/main.js"></script>
-</div>
   </body>
 
 </html>

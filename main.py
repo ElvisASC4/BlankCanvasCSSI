@@ -102,7 +102,7 @@ class UpVote(webapp2.RequestHandler):
         template = jinja_env.get_template('template/viewPost.html')
         self.response.write(template.render(template_vars))
 
-        self.redirect('/View')
+        
         # }
         # template = jinja_env.get_template(
         #     'template/viewPost.html')

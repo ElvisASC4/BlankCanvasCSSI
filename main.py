@@ -40,7 +40,15 @@ class MakePost(webapp2.RequestHandler):
         new_post.put()
         self.redirect('/View')
 
+        upvote_var = (self.request.get("upvote"))
 
+        if upvote_var == "upvote_value":
+            vote_num = int(self.request.get('vote_count'))
+            post_key=self.request.get("hidden")
+            vote_num+=1
+
+            new_post.vote_count=vote_num
+            new_post.put()
 
          # posts
         # posts_by_new=
@@ -95,7 +103,11 @@ class UpVote(webapp2.RequestHandler):
                 "new_post":post,
 
                 # "posts_ordered":posts_ordered
-                }
+                }        # }
+
+        template = jinja_env.get_template('template/viewPost.html')
+        self.response.write(template.render(template_vars))
+
         self.redirect('/View')
         # }
         # template = jinja_env.get_template(

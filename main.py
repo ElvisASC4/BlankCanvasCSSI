@@ -144,5 +144,5 @@ app = webapp2.WSGIApplication([
     ('/MakePost', MakePost),
     ('/AboutUs', AboutUs),
     ('/UpVote', UpVote),
-    ('/DeletePost', DeletePost),
+    ('/DeletePost', DeletePost)
     ], debug=True)

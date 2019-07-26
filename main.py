@@ -95,7 +95,11 @@ class UpVote(webapp2.RequestHandler):
                 "new_post":post,
 
                 # "posts_ordered":posts_ordered
-                }
+                }        # }
+
+        template = jinja_env.get_template('template/viewPost.html')
+        self.response.write(template.render(template_vars))
+
         self.redirect('/View')
         # }
         # template = jinja_env.get_template(
@@ -112,6 +116,7 @@ class UpVote(webapp2.RequestHandler):
 #
 #     new_post.vote_count=vote_num
 #     new_post.put()
+
 
 class AboutUs(webapp2.RequestHandler):
     def get(self):

@@ -41,12 +41,15 @@
               <br>
               <!-- The comment button : -->
               <button id="commentButton" class="button" type="submit"> Post your comment </button>
+            </form>
+
+            <form method="post" action= "/UpVote">
               <!-- The deletion button : -->
               <button id="deleteButton" class="button" type="submit"> Delete Post </button>
-              <button class="vote button" name="upvote" value="upvote_value" id="upvote">&#9825;</button>
-              <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key.id()}}">
-
+              <button class="button"  type="submit" name="upvote" value="upvote_value" id="upvote">Like this post &nbsp; &#9825;</button>
+              <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key.urlsafe()}}">
             </form>
+
       </div>
     </div>
     {% endfor%}

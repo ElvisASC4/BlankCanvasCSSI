@@ -4,6 +4,42 @@ body{
   /* background-size: cover; */
   color: black;
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+li {
+  /* float: left; */
+}
+.logo{
+  float: left;
+}
+#viewPost{
+  margin-right: 170px;
+  margin-left: 50px;
+}
+.right{
+  float: right;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.right:hover {
+  background-color: darkred;
+}
+
+
+
 .spiderMan{
   width: 80px;
   height: 80px;

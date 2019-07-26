@@ -49,7 +49,7 @@ class MakePost(webapp2.RequestHandler):
 
 class ViewPost(webapp2.RequestHandler):
     def get(self):
-        all_posts = SavePost.query(vote_count).fetch()
+        all_posts = SavePost.query().order(-SavePost.vote_count).fetch()
         template_vars = {
                 "all_posts":all_posts
                 # "posts_ordered":posts_ordered
@@ -59,7 +59,7 @@ class ViewPost(webapp2.RequestHandler):
         self.response.write(template.render(template_vars))
 
     def post(self):
-        all_posts = SavePost.query(vote_count).fetch()
+        all_posts = SavePost.query().order(-SavePost.vote_count).fetch()
         post_key_url = self.request.get('postKey')
         post = ndb.Key(urlsafe = post_key_url).get()
         print post_key_url
@@ -91,7 +91,7 @@ class UpVote(webapp2.RequestHandler):
         post.vote_count+=1
 
         post.put()
-        all_posts = SavePost.query(vote_count).fetch()
+        all_posts = SavePost.query().order(-SavePost.vote_count).fetch()
         template_vars = {
                 "new_post":post,
                 "all_posts":all_posts

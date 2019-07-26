@@ -12,7 +12,7 @@
 
           <div id="top">
             <h1 id="title">{{new_post.title}}</h1>
-            <p id="voteCount"> <3 {{new_post.vote_count}}</p>
+            <p id="voteCount"> &#9825; {{new_post.vote_count}}</p>
           </div>
           <div id="actualText">
             <h4 id="artistName">By: {{new_post.artist}}</h4>
@@ -43,9 +43,9 @@
               <button id="commentButton" class="button" type="submit"> Post your comment </button>
               <!-- The deletion button : -->
               <button id="deleteButton" class="button" type="submit"> Delete Post </button>
-              <button class="vote button" name="upvote" value="upvote_value" id="upvote">&#8679;</button>
-              <input id="nameBox" type="text" name="hidden" value="{{new_post.key.id()}}">
-              <button class="vote button">&#8681;</button>
+              <button class="vote button" name="upvote" value="upvote_value" id="upvote">&#9825;</button>
+              <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key.id()}}">
+
             </form>
       </div>
     </div>

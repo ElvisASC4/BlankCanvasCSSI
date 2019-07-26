@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -48,40 +46,6 @@
             </form>
       </div>
     </div>
-<<<<<<< HEAD
-      <p id="voteCount">Your vote count is {{new_post.vote_count}}</p>
-      <p id ="comment">Comments below: </p>
-      {% for comment in new_post.comments %}
-      <p> {{comment}} </p>
-      {% endfor %}
-
-
-      <form method="post" action="/View">
-        <label>
-            Your comment:
-            <input type="hidden" name="postKey" value="{{new_post.key.urlsafe()  }}" />
-            <textarea name="comment" rows="8" cols="80"></textarea>
-        </label>
-        <br>
-        <!-- The comment button : -->
-
-        <button id="commentButton" type="submit"> Post your comment </button>
-      </form>
-      <button id="deleteButton" type="submit"> Delete Post </button>
-
-      <form method="post" action="/UpVote">
-        <!-- The deletion button : -->
-
-        <button class="vote" name="upvote" type="submit" value="upvote_value" id="upvote">&#8679;</button>
-        <input id="nameBox" type="hidden" name="hidden" value="{{new_post.key.urlsafe()}}" size="80">
-        <button class="vote">&#8681;</button>
-      </form>
-
-</div>
-</div>
-
-=======
->>>>>>> 4eb6d845b08e141d771d7362db6272d1ea25aedb
     {% endfor%}
 
 <script src="../static/js/main.js"></script>

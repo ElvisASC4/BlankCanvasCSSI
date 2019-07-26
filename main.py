@@ -46,6 +46,14 @@ class MakePost(webapp2.RequestHandler):
         # posts_by_new=
         all_posts.insert(0, new_post)
         # posts_ordered= posts_by_new.order(vote)
+class DeletePost(webapp2.RequestHandler):
+    def post(self):
+        print "***********************"
+        print self.request.get('postKey')
+        key = ndb.Key(urlsafe=self.request.get('postKey'))
+        key.delete()
+        self.redirect('/View')
+
 
 class ViewPost(webapp2.RequestHandler):
     def get(self):
@@ -102,7 +110,7 @@ class UpVote(webapp2.RequestHandler):
         template = jinja_env.get_template('template/viewPost.html')
         self.response.write(template.render(template_vars))
 
-        
+
         # }
         # template = jinja_env.get_template(
         #     'template/viewPost.html')
@@ -135,5 +143,6 @@ app = webapp2.WSGIApplication([
     ('/View', ViewPost),
     ('/MakePost', MakePost),
     ('/AboutUs', AboutUs),
-    ('/UpVote', UpVote)
+    ('/UpVote', UpVote),
+    ('/DeletePost', DeletePost),
     ], debug=True)

@@ -41,7 +41,17 @@
               <br>
               <!-- The comment button : -->
               <button id="commentButton" class="button" type="submit"> Post your comment </button>
-            </form>
+
+              <form method="post" action="/DeletePost">
+                    <label>
+                        Post to delete:
+                        <input type = "hidden" name="postKey" value="{{new_post.key.urlsafe()}}"></input>
+                    </label>
+                    <br>
+
+                    <!-- The deletion button : -->
+                    <button id="deleteButton" name="delete" type="submit"> Delete Post </button>
+                </form>
 
             <form method="post" action= "/UpVote">
               <!-- The deletion button : -->

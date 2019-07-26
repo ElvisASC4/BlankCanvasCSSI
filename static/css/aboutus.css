@@ -1,7 +1,45 @@
+body{
+  background-image: url("http://chromethemer.com/wallpapers/chromebook-wallpapers/download/space-hole-3840x2160.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#welcomeText{
+  color: white;
+}
+.realImages{
+  height: 550px;
+}
 .photos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.cards{
+  margin-top: 20px;
+  background-color: white;
+}
 
+#isabellaCard{
+  margin-left: 0px;
+}
+#elvisCard{
+  margin-left: 40px;
+}
+#tyCard{
+  margin-left: 0px;
 }
 #allPhotos{
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
+}
+#hatsParent{
+  display: flex;
+  justify-content: space-evenly;
+}
+.hats{
+  width: 80px;
+  height: 80px;
+  margin-top: 80px;
 }

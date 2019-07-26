@@ -17,6 +17,7 @@
           <div id="actualText">
             <h4 id="artistName">By: {{new_post.artist}}</h4>
             <p id="poem">{{new_post.poem}}</p>
+            
         </div>
 
 
@@ -33,7 +34,7 @@
             <form method="post" action="/View">
 
               <label>
-                  <h3>Give some feedback!:</h3>
+                  <h3>Give some feedback:</h3>
                   <input type="hidden" name="postKey" value="{{ new_post.key.urlsafe()  }}" />
                   <textarea name="comment" rows="2" cols="127"></textarea>
               </label>

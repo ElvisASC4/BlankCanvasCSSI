@@ -29,6 +29,7 @@ class MakePost(webapp2.RequestHandler):
         artist_input = self.request.get('artist')
         title_input = self.request.get('title')
         poem_input = self.request.get('poem')
+        print poem_input
         vote_num = self.request.get('vote_count')
 
 
@@ -38,6 +39,9 @@ class MakePost(webapp2.RequestHandler):
 
         new_post = SavePost(artist= artist_input, title=title_input, poem=poem_input, vote_count=0)
         new_post.put()
+
+        print new_post
+
         self.redirect('/View')
 
 

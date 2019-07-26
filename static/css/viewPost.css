@@ -84,4 +84,5 @@ padding-right: 15px;
   /* justify-content: space-between; */
   flex-direction: column;
   background-color: black;
+  white-space: pre-wrap;
 }

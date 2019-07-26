@@ -49,7 +49,7 @@ class MakePost(webapp2.RequestHandler):
 
 class ViewPost(webapp2.RequestHandler):
     def get(self):
-        all_posts = SavePost.query().fetch()
+        all_posts = SavePost.query(vote_count).fetch()
         template_vars = {
                 "all_posts":all_posts
                 # "posts_ordered":posts_ordered

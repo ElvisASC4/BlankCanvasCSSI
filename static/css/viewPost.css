@@ -2,10 +2,12 @@ body{
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfVRDAvEvWTja1VU75wfE2rKO0LCwTLZp_-J_QyLdIxczCXL_U");
   /* background-repeat: no-repeat; */
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
-/* #eachComment{
+.questFont{
+  font-family: 'Questrial', sans-serif;
 
-} */
+}
 hr{
   width: 10%;
 }
@@ -42,7 +44,7 @@ li a {
 }
 
 .right:hover {
-  background-color: darkred;
+  background-color: black;
 }
 
 #contents{

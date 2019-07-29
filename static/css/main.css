@@ -5,6 +5,11 @@ body{
   color: white;
   text-shadow: 2px 2px black;
   overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+}
+.questFont{
+  font-family: 'Questrial', sans-serif;
+
 }
 #brandName{
   font-size: 60px;

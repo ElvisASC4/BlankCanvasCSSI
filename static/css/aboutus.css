@@ -2,8 +2,13 @@ body{
   background-image: url("http://chromethemer.com/wallpapers/chromebook-wallpapers/download/space-hole-3840x2160.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
+  font-family: 'Raleway', sans-serif;
 
+}
+.questFont{
+  font-family: 'Questrial', sans-serif;
+
+}
 ul {
   list-style-type: none;
   margin: 0;

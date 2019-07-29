@@ -12,9 +12,9 @@
 
 
     <ul id="itemHolder">
-      <li><a class="active logo" href="/">Blank Canvas</a></li>
-      <li><a href="/MakePost" id="makePost"class="right">Make a post</a></li>
-      <li><a href="/AboutUs"  class="right">About Us</a></li>
+      <li><a class="active logo questFont" href="/">Blank Canvas</a></li>
+      <li><a href="/MakePost" id="makePost"class="right hvr-pulse questFont">Make a post</a></li>
+      <li><a href="/AboutUs"  class="right hvr-pulse questFont">About Us</a></li>
     </ul>
 
 
@@ -27,7 +27,7 @@
       <div id="contents">
 
           <div id="top">
-            <h1 id="title">{{new_post.title}}</h1>
+            <h1 id="title" class="questFont">{{new_post.title}}</h1>
             <p id="voteCount"> &#9825; {{new_post.vote_count}}</p>
           </div>
           <div id="actualText">
@@ -38,7 +38,7 @@
 
 
         <div id="commentDiv">
-          <h3 id ="comment">Feedback: </h3>
+          <h3 id ="comment" class="questFont">Feedback: </h3>
           {% for comment in new_post.comments %}
           <p id="eachComment"> {{comment}} </p>
           <hr align="left">

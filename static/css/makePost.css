@@ -3,8 +3,13 @@ body{
   /* background-repeat: no-repeat; */
   /* background-size: cover; */
   color: black;
-}
+  font-family: 'Raleway', sans-serif;
 
+}
+.questFont{
+  font-family: 'Questrial', sans-serif;
+
+}
 ul {
   list-style-type: none;
   margin: 0;
